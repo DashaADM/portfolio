@@ -15,7 +15,7 @@ const page = (props) => {
           <div className="text-5xl tracking-tight mx-auto font-normal text-neutral-600 dark:text-neutral-400">
             Build
             <FlipWords words={[`Testing`, `Words`, `More`]} /> <br />
-            websites with Aceternity UI
+            websites with Aceternity UI test
           </div>
         </div>
       </AuroraBackground>
