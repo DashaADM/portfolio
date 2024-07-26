@@ -13,6 +13,9 @@ import { Pages } from './collections/Pages'
 
 import { Settings } from './globals/Settings'
 import { COLLECTION_SLUG } from './constants'
+import { Projects } from './collections/Projects'
+import { Services } from './collections/Services'
+import { cachedPayloadPlugin } from './plugins/CachedPayload'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -21,7 +24,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Pages, Users, Media],
+  collections: [Pages, Projects, Services, Users, Media],
   globals: [Settings],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
@@ -39,5 +42,6 @@ export default buildConfig({
       generateURL: (docs) =>
         docs.reduce((url, doc) => `${url}/${doc.slug}`.replace(/^\/+/, '/'), ''),
     }),
+    cachedPayloadPlugin,
   ],
 })

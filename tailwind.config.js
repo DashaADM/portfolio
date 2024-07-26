@@ -8,12 +8,13 @@ module.exports = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
+    'node_modules/flowbite-react/lib/esm/**/*.js',
   ],
   prefix: '',
   theme: {
     container: {
       center: true,
-      padding: '2rem',
+      padding: '1.5rem',
       screens: {
         '2xl': '1400px',
       },
@@ -84,7 +85,12 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate'), addVariablesForColors],
+  plugins: [
+    require('tailwindcss-animate'),
+    'flowbite/plugin',
+    addVariablesForColors,
+    require('@tailwindcss/forms'),
+  ],
 }
 
 function addVariablesForColors({ addBase, theme }) {

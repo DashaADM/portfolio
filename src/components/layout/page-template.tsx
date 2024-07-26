@@ -3,7 +3,7 @@ import { Slot } from '@radix-ui/react-slot'
 import { cva, type VariantProps } from 'class-variance-authority'
 import React from 'react'
 
-const pageVariants = cva('', {
+const pageVariants = cva('min-h-screen', {
   variants: {
     withHeaderPadding: {
       true: 'pt-[var(--header-height)]',

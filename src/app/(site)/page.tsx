@@ -1,26 +1,38 @@
-import { PageTemplate } from '@/components/layout/page-template'
-import { AuroraBackground } from '@/components/ui/aurora-background'
-import { Button } from '@/components/ui/button'
-import { FlipWords } from '@/components/ui/flip-words'
-import React from 'react'
+import { About } from '@/components/blocks/about'
+import { Blog } from '@/components/blocks/blog'
+import { FAQ } from '@/components/blocks/faq'
+import { Price } from '@/components/blocks/price'
+import { PrimaryHeroBlock } from '@/components/blocks/primaryHero'
+import { ProjectsBlock } from '@/components/blocks/projectsBlock'
+import config from '@/payload.config'
 
-const page = (props) => {
-  props.children
-  const { children } = props
+import { PageTemplate } from '@/components/layout/page-template'
+import { getPayloadHMR } from '@payloadcms/next/utilities'
+import React from 'react'
+import { COLLECTION_SLUG } from '@/constants'
+import { getCachedPayload } from '@/plugins/CachedPayload'
+import { ProjectsPreview } from '@/components/projects/ProjectsPreview'
+
+const Page = async () => {
+  const payload = await getPayloadHMR({
+    config,
+  })
+
+  const cachedPayload = getCachedPayload(payload)
+
+  const projects = await cachedPayload.find({ collection: COLLECTION_SLUG.PROJECTS, limit: 4 })
 
   return (
     <PageTemplate withHeaderPadding={false}>
-      <AuroraBackground>
-        <div className="h-[40rem] flex justify-center items-center px-4">
-          <div className="text-5xl tracking-tight mx-auto font-normal text-neutral-600 dark:text-neutral-400">
-            Build
-            <FlipWords words={[`Testing`, `Words`, `More`]} /> <br />
-            websites with Aceternity UI test
-          </div>
-        </div>
-      </AuroraBackground>
+      <PrimaryHeroBlock />
+      <About />
+      {/* <ProjectsBlock /> */}
+      <ProjectsPreview data={projects.docs} />
+      <Price />
+      <FAQ />
+      <Blog />
     </PageTemplate>
   )
 }
 
-export default page
+export default Page
