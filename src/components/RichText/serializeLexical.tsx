@@ -3,8 +3,6 @@ import type { HTMLConverter, SerializeConfig, SerializedLexicalNodeWithParent } 
 import type { SerializedEditorState, SerializedLexicalNode } from 'lexical'
 import { Fragment, type ReactNode } from 'react'
 import { defaultHTMLConverters } from './defaultConverters'
-import { Slot } from '@radix-ui/react-slot'
-const blockElements = ['paragraph', 'heading', 'list', 'horizontalrule', 'blockquote', 'upload']
 
 export function serializeLexical(
   data?: SerializedEditorState,
@@ -75,15 +73,7 @@ export function convertLexicalNodesToReactNode({
 
   return (
     <Fragment>
-      {htmlArray.map(({ lexicalNode, reactNode }, idx) => {
-        // biome-ignore lint/suspicious/noArrayIndexKey: Index does not change
-        if (blockElements.includes(lexicalNode.type) && !config?.disableContainer) {
-          return (
-            <Slot key={idx} className="container max-w-3xl">
-              {reactNode}
-            </Slot>
-          )
-        }
+      {htmlArray.map(({ reactNode }, idx) => {
         return <Fragment key={idx}>{reactNode}</Fragment>
       })}
     </Fragment>

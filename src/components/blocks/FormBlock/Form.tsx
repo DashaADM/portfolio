@@ -6,8 +6,8 @@ import { toast } from 'sonner'
 import { Form as FormType } from '@/payload-types'
 import { Button } from '@/components/ui/button'
 import { submitForm } from './actions'
-import RichText from '@/components/RichText'
 import { redirect } from 'next/navigation'
+import { RichText } from '@/components/RichText'
 
 export const Form = ({ form, children }: { form: FormType; children: React.ReactNode }) => {
   const {

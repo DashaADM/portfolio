@@ -4,10 +4,10 @@ import { getPayloadHMR } from '@payloadcms/next/utilities'
 import { getCachedPayload } from '@/plugins/cachedPayload'
 import { COLLECTION_SLUG } from '@/constants'
 import { PageTemplate } from '@/components/layout/page-template'
-import { serializeLexical } from '@/components/richText/serializeLexical'
 import { Title } from '@/components/ui/title'
 import { Badge } from '@/components/ui/badge'
 import { notFound } from 'next/navigation'
+import { RichText } from '@/components/RichText'
 
 interface BlogPostProps {
   params: {
@@ -26,8 +26,6 @@ const BlogPost = async ({ params }: BlogPostProps) => {
   if (!post) {
     notFound()
   }
-
-  const content = serializeLexical(post?.content)
 
   const date = post?.publishedAt
     ? new Intl.DateTimeFormat('ru', {
@@ -49,12 +47,12 @@ const BlogPost = async ({ params }: BlogPostProps) => {
             {post?.tags?.map(
               (tag) =>
                 typeof tag?.value === 'object' && (
-                  <Badge key={tag.value.id}>{tag?.value?.name}</Badge>
+                  <Badge key={tag.value.id}>{tag?.value?.title}</Badge>
                 ),
             )}
           </div>
         </div>
-        {content}
+        <RichText content={post?.content} />
       </div>
     </PageTemplate>
   )

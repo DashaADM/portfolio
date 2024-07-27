@@ -37,7 +37,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
         {post?.tags?.map(
           (tag) =>
             typeof tag?.value === 'object' && (
-              <Badge key={tag?.value?.id}>{tag?.value?.name}</Badge>
+              <Badge key={tag?.value?.id}>{tag?.value?.title}</Badge>
             ),
         )}
       </div>

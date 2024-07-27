@@ -26,7 +26,9 @@ const ContactPage = async () => {
   const settings = await cachedPayload.findGlobal({ slug: GLOBAL_SLUG.SETTINGS })
 
   const form =
-    typeof settings.forms.contactForm.value === 'object' ? settings.forms.contactForm.value : null
+    typeof settings?.forms?.contactForm?.value === 'object'
+      ? settings?.forms?.contactForm?.value
+      : null
 
   return (
     <PageTemplate>

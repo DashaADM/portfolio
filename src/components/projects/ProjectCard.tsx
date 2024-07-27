@@ -34,7 +34,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
           {Array.isArray(data.tags) &&
             data?.services?.map(
               (service) =>
-                typeof service?.value === 'object' && <Badge>{service?.value?.title}</Badge>,
+                typeof service?.value === 'object' && (
+                  <Badge key={service?.value?.id}>{service?.value?.title}</Badge>
+                ),
             )}
         </div>
       </div>

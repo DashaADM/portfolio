@@ -22,3 +22,5 @@ export const FloatingLabel: React.FC<FloatingLabelProps> = React.forwardRef<
     </div>
   )
 })
+
+FloatingLabel.displayName = 'FloatingLabel'
