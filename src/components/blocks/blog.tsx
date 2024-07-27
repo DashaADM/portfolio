@@ -15,7 +15,7 @@ export const Blog: React.FC<BlogProps> = ({ posts }) => {
       </Title>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post) => (
-          <BlogCard post={post} />
+          <BlogCard key={post.id} post={post} />
         ))}
       </div>
     </section>

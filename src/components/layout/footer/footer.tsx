@@ -104,9 +104,8 @@ export const Footer = () => {
               </Button>
             </div>
             <p className="mt-3 text-sm text-zinc-400">
-              Нажимая на кнопку "Подписаться", вы соглашаетесь с условиями
+              Нажимая на кнопку &quot;Подписаться&quot;, вы соглашаетесь с условиями{' '}
               <Link href="/" className="hover:text-zinc-400/90">
-                {' '}
                 Политики конфиденциальности
               </Link>
               .
