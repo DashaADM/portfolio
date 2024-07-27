@@ -12,7 +12,13 @@ export const ThemeSwitcher = () => {
     setTheme((c) => (resolvedTheme === 'dark' ? 'light' : 'dark'))
   }
   return (
-    <Button variant="ghost" size="icon" onClick={handleThemeChange} className="border">
+    <Button
+      variant="ghost"
+      size="icon"
+      onClick={handleThemeChange}
+      className="border"
+      aria-label="Поменять цвет темы"
+    >
       <SunIcon className="hidden dark:block" />
       <MoonIcon className="dark:hidden" />
     </Button>
