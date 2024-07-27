@@ -15,7 +15,11 @@ import { Settings } from './globals/Settings'
 import { COLLECTION_SLUG } from './constants'
 import { Projects } from './collections/Projects'
 import { Services } from './collections/Services'
-import { cachedPayloadPlugin } from './plugins/CachedPayload'
+import { cachedPayloadPlugin } from './plugins/cachedPayload'
+import { Posts } from './collections/Posts'
+import { Tags } from './collections/Tags/Tags'
+import { pluginSeo } from './plugins/pluginSeo'
+import { pluginFormBuilder } from './plugins/pluginFormBuilder'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -24,7 +28,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Pages, Projects, Services, Users, Media],
+  collections: [Pages, Posts, Projects, Services, Tags, Users, Media],
   globals: [Settings],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
@@ -43,5 +47,7 @@ export default buildConfig({
         docs.reduce((url, doc) => `${url}/${doc.slug}`.replace(/^\/+/, '/'), ''),
     }),
     cachedPayloadPlugin,
+    pluginSeo,
+    pluginFormBuilder,
   ],
 })

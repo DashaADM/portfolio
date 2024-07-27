@@ -6,8 +6,8 @@ import React from 'react'
 const titleVariants = cva('font-semibold leading-7', {
   variants: {
     order: {
-      1: 'tracking-tight text-3xl sm:text-4xl lg:text-5xl font-normal text-zinc-600 dark:text-zinc-200',
-      2: 'text-3xl lg:text-4-xl',
+      1: 'scroll-m-20 tracking-tight text-3xl sm:text-4xl lg:text-5xl font-normal text-zinc-600 dark:text-zinc-200',
+      2: 'scroll-m-20 text-3xl lg:text-4-xl',
       3: 'text-2xl lg:text-3-xl',
       4: 'text-md font-semibold',
     },

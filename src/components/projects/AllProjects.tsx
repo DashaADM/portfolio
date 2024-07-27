@@ -6,12 +6,14 @@ import { ProjectCard } from './ProjectCard'
 import {
   Pagination,
   PaginationContent,
+  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
 } from '../ui/pagination'
 import Link from 'next/link'
+import { generatePageNumbers } from '@/utils/generatePageNumbers'
 
 interface AllProjectsProps {
   data: PaginatedDocs<Project>
@@ -19,6 +21,7 @@ interface AllProjectsProps {
 
 export const AllProjects: React.FC<AllProjectsProps> = ({ data }) => {
   const paginationVisible = data.totalPages > 1
+  const pageNumbers = generatePageNumbers(data.totalPages, data.page)
 
   return (
     <section className="container pt-16 sm:pt-24">
@@ -38,9 +41,19 @@ export const AllProjects: React.FC<AllProjectsProps> = ({ data }) => {
                 </Link>
               </PaginationItem>
             )}
-            <PaginationItem>
-              <PaginationLink>{data.page}</PaginationLink>
-            </PaginationItem>
+            {pageNumbers.map((pageNumber, index) => (
+              <PaginationItem key={index}>
+                {pageNumber === '...' ? (
+                  <PaginationEllipsis />
+                ) : (
+                  <Link href={`/projects?page=${pageNumber}`} legacyBehavior passHref>
+                    <PaginationLink isActive={pageNumber === data?.page}>
+                      {pageNumber}
+                    </PaginationLink>
+                  </Link>
+                )}
+              </PaginationItem>
+            ))}
             {data?.hasNextPage && (
               <PaginationItem>
                 <Link href={`/projects?page=${data.nextPage}`} legacyBehavior passHref>

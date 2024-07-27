@@ -1,5 +1,3 @@
-'use client'
-
 import { useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Field, Label, Switch } from '@headlessui/react'
@@ -14,9 +12,21 @@ import {
   PencilSquareIcon,
 } from '@heroicons/react/24/outline'
 import { InstagramLogoIcon } from '@radix-ui/react-icons'
+import { getPayloadHMR } from '@payloadcms/next/utilities'
+import config from '@payload-config'
+import { getCachedPayload } from '@/plugins/cachedPayload'
+import { GLOBAL_SLUG } from '@/constants'
+import { FormBlock } from '@/components/blocks/FormBlock'
 
-const ContactPage = () => {
-  const [agreed, setAgreed] = useState(false)
+const ContactPage = async () => {
+  // const [agreed, setAgreed] = useState(false)
+  const payload = await getPayloadHMR({ config })
+  const cachedPayload = getCachedPayload(payload)
+
+  const settings = await cachedPayload.findGlobal({ slug: GLOBAL_SLUG.SETTINGS })
+
+  const form =
+    typeof settings.forms.contactForm.value === 'object' ? settings.forms.contactForm.value : null
 
   return (
     <PageTemplate>
@@ -101,8 +111,8 @@ const ContactPage = () => {
                 </div>
               </div>
             </div>
-
-            <form action="#" method="POST" className="max-w-full">
+            {form ? <FormBlock form={form} /> : null}
+            {/* <form action="#" method="POST" className="max-w-full">
               <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                 <div>
                   <label htmlFor="first-name" className="block text-sm font-semibold leading-6">
@@ -252,7 +262,7 @@ const ContactPage = () => {
                   Let's talk
                 </button>
               </div>
-            </form>
+            </form> */}
           </div>
         </main>
       </div>

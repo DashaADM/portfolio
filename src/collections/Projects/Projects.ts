@@ -22,10 +22,19 @@ export const Projects: CollectionConfig = {
     },
     slug(),
     {
-      name: 'tags',
+      name: 'services',
       type: 'relationship',
       hasMany: true,
       relationTo: [COLLECTION_SLUG.SERVICES],
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'tags',
+      type: 'relationship',
+      hasMany: true,
+      relationTo: [COLLECTION_SLUG.TAGS],
       admin: {
         position: 'sidebar',
       },

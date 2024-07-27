@@ -48,6 +48,24 @@ export const Settings: GlobalConfig = {
             },
           ],
         },
+        {
+          name: 'forms',
+          label: 'Forms',
+          fields: [
+            {
+              name: 'footerForm',
+              label: 'Footer Form',
+              type: 'relationship',
+              relationTo: [COLLECTION_SLUG.FORMS],
+            },
+            {
+              name: 'contactForm',
+              label: 'Contact Form',
+              type: 'relationship',
+              relationTo: [COLLECTION_SLUG.FORMS],
+            },
+          ],
+        },
       ],
     },
   ],
