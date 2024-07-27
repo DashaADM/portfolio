@@ -11,7 +11,6 @@ import {
 } from '@radix-ui/react-navigation-menu'
 import { Title } from '@/components/ui/title'
 import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
 import { FloatingLabel } from '@/components/ui/floating-label'
 import {
   Accordion,
@@ -20,6 +19,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion'
 import { InstagramLogoIcon } from '@radix-ui/react-icons'
+import { Form } from '@/payload-types'
 
 const data = [
   {
