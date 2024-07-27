@@ -10,6 +10,8 @@ const titleVariants = cva('font-semibold leading-7', {
       2: 'scroll-m-20 text-3xl lg:text-4-xl',
       3: 'text-2xl lg:text-3-xl',
       4: 'text-md font-semibold',
+      5: 'text-md font-semibold',
+      6: 'text-md font-semibold',
     },
   },
   defaultVariants: {

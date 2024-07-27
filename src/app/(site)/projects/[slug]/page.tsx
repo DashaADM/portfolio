@@ -1,5 +1,5 @@
 import { PageTemplate } from '@/components/layout/page-template'
-import { serializeLexical } from '@/components/richText/serializeLexical'
+import { RichText } from '@/components/RichText'
 import { Title } from '@/components/ui/title'
 import { getCachedPayload } from '@/plugins/cachedPayload'
 import { getPayloadHMR } from '@payloadcms/next/utilities'
@@ -21,8 +21,6 @@ const ProjectPage = async ({ params }: { params: { slug: string } }) => {
     notFound()
   }
 
-  const content = serializeLexical(project?.content)
-
   return (
     <PageTemplate>
       <div className="my-28">
@@ -37,7 +35,7 @@ const ProjectPage = async ({ params }: { params: { slug: string } }) => {
             )}
           </div>
         </div>
-        {content}
+        <RichText content={project?.content} />
       </div>
     </PageTemplate>
   )

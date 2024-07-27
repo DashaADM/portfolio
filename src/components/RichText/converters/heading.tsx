@@ -26,8 +26,6 @@ export const HeadingHTMLConverter: HTMLConverter<SerializedHeadingNode> = {
       h4: 4,
     }[node.tag || 'h1'] as TitleOrder
 
-    console.log(`text-${node.format}`)
-
     return (
       <div>
         <Title order={order} className={`text-${node.format}`}>
