@@ -6,43 +6,48 @@ import { BlurredColor } from '../blurred-color'
 const data = [
   {
     id: 1,
-    question: `Lorem ipsum dolor sit amet consectetur adipisicing.`,
-    answer: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque excepturi sint iure! Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque excepturi sint iure! Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque excepturi sint iure!`,
+    question: `Сколько времени занимает разработка сайта?`,
+    answer: `Разработка одностраничного сайта занимает около 2-4 недель, а многостраничного сайта или интернет-магазина – от 4 до 16 недель, в зависимости от сложности проекта и на чем реализуется (на платформе или коде).`,
   },
   {
     id: 2,
-    question: `Lorem ipsum dolor sit amet consectetur adipisicing.`,
-    answer: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque excepturi sint iure!`,
+    question: `Какие технологии вы используете для создания сайтов?`,
+    answer: `Платформы — Wordpress / Woocommerce, Tilda, Shopify (не работает в России). На коде — React, Node.js, Next.js, MySQL, PostgreSQL, Payload CMS, фреймфорк Medusa для интернет-магазинов.`,
   },
   {
     id: 3,
-    question: `Lorem ipsum dolor sit amet consectetur adipisicing.`,
-    answer: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque excepturi sint iure!`,
+    question: `Чем отличается сайт на платформе и кастомный на коде?`,
+    answer: `Это довольно обширный вопрос. Если коротко, то ценой и работоспособностью :) Сайт, созданный на платформе, подходит для начинающих компаний, когда нет средств или времени на кастомный. Чаще всего он быстрее реализуется, но обычно уступает кастомному в скорости, возможностях функционала, технических характеристиках, которые влияют на репрезентативность сайта. Кастомный сайт легко масштабируется, на нем можно сделать все, что хочется, имеет высокие показатели в интернете. Более подробно можете прочитать здесь: или написать мне, и я вам расскажу!`,
   },
   {
     id: 4,
-    question: `Lorem ipsum dolor sit amet consectetur adipisicing.`,
-    answer: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque excepturi sint iure!`,
+    question: `Как происходит оплата?`,
+    answer: `Обычно 50% предоплата перед началом работ и 50% по завершении. Если это большой проект, разбиваем проект на этапы, вносите оговоренный процент предоплаты и далее по мере реализации этапов.`,
   },
   {
     id: 5,
-    question: `Lorem ipsum dolor sit amet consectetur adipisicing.`,
-    answer: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque excepturi sint iure!`,
+    question: `Смогу ли я сам обновлять контент на сайте после его создания?`,
+    answer: `Да, все сайты создаются с интеграцией удобных систем управления контентом (CMS), что позволяет самостоятельно обновлять и добавлять новую информацию.`,
+  },
+  {
+    id: 6,
+    question: `Предоставляете ли дальнейшее продвижение и поддержку сайта?`,
+    answer: `Да. SEO продвижение, реклама в Яндекс, поддержка/администрирование/улучшение сайта.`,
   },
 ]
 
 export const FAQ = () => {
   return (
-    <section className="py-8 lg:py-12 container">
+    <section className="my-16 md:my-32 container">
       <div className="grid md:grid-cols-5">
-        <div className="md:col-span-2 md:pr-20 relative">
+        <div className="md:col-span-2 mb-4 md:pr-20 relative">
           <div className="absolute w-96 h-96 rounded-full -z-10 bottom-0 blur-[200px] bg-gradient-to-tr from-indigo-400 to-violet-400 -translate-x-2/4 translate-y-2/4" />
-          <Title order={2} className="mb-6">
+          <Title order={2} className="mb-8 md:mb-10">
             Частозадаваемые вопросы
           </Title>
           <p className="text-zinc-600 dark:text-zinc-400">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum alias dolorum voluptate
-            deserunt esse vero accusamus, sit eveniet fugit illo.
+            Добро пожаловать в уголок вопросов и ответов! Если у вас есть вопрос, возможно, он уже
+            здесь. Если нет – не стесняйтесь задать его мне!
           </p>
         </div>
         <div className="md:col-span-3">

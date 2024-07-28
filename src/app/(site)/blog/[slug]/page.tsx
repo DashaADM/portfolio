@@ -37,11 +37,11 @@ const BlogPost = async ({ params }: BlogPostProps) => {
 
   return (
     <PageTemplate>
-      <div className="my-28">
-        <div className="container max-w-3xl text-center mb-28">
-          <span className="text-muted-foreground uppercase text-xs tracking-wide font-medium">
+      <div className="my-32">
+        <div className="container max-w-3xl text-center mb-24">
+          <div className="text-muted-foreground uppercase text-xs tracking-wide font-medium mb-4">
             {date}
-          </span>
+          </div>
           <Title className="mb-8">{post?.title}</Title>
           <div className="flex gap-4 justify-center">
             {post?.tags?.map(

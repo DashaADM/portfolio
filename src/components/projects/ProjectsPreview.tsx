@@ -13,9 +13,9 @@ export const ProjectsPreview: React.FC<ProjectsPreviewProps> = ({
   data,
 }) => {
   return (
-    <section className="container pt-16 sm:pt-24">
+    <section className="container my-16 md:my-32">
       {typeof title === 'string' ? <Title order={2}>{title}</Title> : title}
-      <div className="py- lg:py-14 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
+      <div className="my-8 md:my-12 grid grid-cols-1 sm:grid-cols-2 gap-10 lg:gap-16">
         {data.map(
           (project) =>
             typeof project === 'object' && <ProjectCard key={project?.id} data={project} />,

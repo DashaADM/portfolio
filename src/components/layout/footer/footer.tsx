@@ -70,8 +70,8 @@ const data = [
 
 export const Footer = () => {
   return (
-    <footer className="w-full max-w-[85rem] py-24 mx-auto">
-      <div className="container grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
+    <footer className="container py-24 mx-auto">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
         <div className="col-span-1">
           <Link href="/" legacyBehavior passHref={true}>
             <Button variant="transparent" className="px-0 pt-0 h-0">
@@ -86,7 +86,7 @@ export const Footer = () => {
         </div>
 
         <div className="w-full md:w-3/4 md:flex md:flex-col md:justify-start lg:w-full h-auto col-span-2 lg:order-1 rounded-2xl bg-zinc-100/60 py-10 px-10 lg:flex-col lg:justify-center dark:bg-zinc-900">
-          <Title order={4}>Stay up to date</Title>
+          <Title order={4}>Оставайтесь на связи</Title>
           <form>
             <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-3 rounded-lg pt-3">
               <div className="w-full">
@@ -154,20 +154,27 @@ export const Footer = () => {
       </div>
       <div className="container grid grid-cols-2 grid-rows-2 px-0 gap-6 h-0 mt-10">
         <div className="col-span-2 row-span-1 px-0">
-          <Button
+          <Link
+            href={'/privacy-policy'}
+            className="text-zinc-400 font-normal text-sm hover:no-underline hover:text-zinc-400/80"
+          >
+            Политика конфиденциальности
+          </Link>
+
+          {/* <Button
             variant="link"
             className="text-zinc-400 font-normal hover:no-underline hover:text-zinc-400/80"
           >
             <Link href="/docs">Политика конфиденциальности</Link>
-          </Button>
+          </Button> */}
         </div>
         <div className="col-span-2 row-span-1 px-0">
-          <Button
-            variant="link"
-            className="text-zinc-400 font-normal hover:no-underline hover:text-zinc-400/80"
+          <Link
+            href={'/sitemap'}
+            className="text-zinc-400 font-normal text-sm hover:no-underline hover:text-zinc-400/80"
           >
-            <Link href="/docs">Sitemap</Link>
-          </Button>
+            Sitemap
+          </Link>
         </div>
       </div>
     </footer>

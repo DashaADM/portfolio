@@ -31,6 +31,24 @@ export const Projects: CollectionConfig = {
       },
     },
     {
+      name: 'technologies',
+      type: 'relationship',
+      hasMany: true,
+      relationTo: [COLLECTION_SLUG.TECHNOLOGIES],
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
+      name: 'features',
+      type: 'relationship',
+      hasMany: true,
+      relationTo: [COLLECTION_SLUG.FEATURES],
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'tags',
       type: 'relationship',
       hasMany: true,
@@ -45,7 +63,11 @@ export const Projects: CollectionConfig = {
       relationTo: COLLECTION_SLUG.MEDIA,
     },
     {
-      name: 'description',
+      name: 'shortDescription',
+      type: 'textarea',
+    },
+    {
+      name: 'longDescription',
       type: 'textarea',
     },
     {

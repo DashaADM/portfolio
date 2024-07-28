@@ -7,44 +7,41 @@ import Link from 'next/link'
 const includedFeatures = [
   {
     name: `Многостраничные сайты и лендинги`,
-    description: `Описание`,
+    description: `Лендинги для продвижения продуктов и услуг. Корпоративные сайты с обширным контентом и сложной структурой.`,
+
     points: [
-      'Private forum access',
-      'Member resources',
-      'Entry to annual conference',
-      'Official member t-shirt',
+      'Формы заявок и подписок',
+      'Удобная система управления контентом (CMS)',
+      'Базовые SEO-настройки',
+      'Система аналитики (Яндекс Метрика)',
     ],
-    price: `60 000`,
+    price: `80 000`,
   },
   {
     name: `Интернет-магазины`,
-    description: `Описание`,
+    description: `Полный цикл создания интернет-магазинов с функционалом, адаптированным под ваш бизнес. Интеграция с необходимыми сервисами (эквайрингом, сервисами доставок, CRM-системой и т.п).`,
+    include: 'Все, что в "Многостраничные сайты и лендинги" +',
     points: [
-      'Private forum access',
-      'Member resources',
-      'Entry to annual conference',
-      'Official member t-shirt',
+      'Каталог с фильтрами и сортировкой',
+      'Корзина и оформление заказа',
+      'Сервис по доставке',
+      'Сервис онлайн-оплаты',
     ],
-    price: `60 000`,
+    price: `120 000`,
   },
   {
     name: `Дизайн`,
-    description: `Описание`,
-    points: [
-      'Private forum access',
-      'Member resources',
-      'Entry to annual conference',
-      'Official member t-shirt',
-    ],
+    description: `Дизайн макета в Figma для лендинга, многостраничника или любого другого проекта без верстки.`,
+    points: ['Макет сайта', 'UI/UX-дизайн', 'Адаптация под 3 типа устройств', 'UI-kit'],
     price: `60 000`,
   },
 ]
 
 export const Price = () => {
   return (
-    <section className="container pt-16 sm:pt-24">
+    <section className="container my-16 sm:my-32">
       <Title order={2}>Стоимость</Title>
-      <div className="flex flex-col py-10 lg:py-14 gap-8 lg:gap-12">
+      <div className="flex flex-col my-8 md:my-16 gap-8 lg:gap-12">
         {includedFeatures.map((feature, index) => (
           <div
             key={index}
@@ -57,8 +54,12 @@ export const Price = () => {
               </p>
               <div className="mt-10 flex items-center gap-x-4">
                 <Title order={4} className=" text-indigo-500 dark:text-indigo-400">
-                  What’s included
+                  Что включено
                 </Title>
+                <p className="leading-7 text-sm font-semibold text-zinc-600 dark:text-zinc-400">
+                  {feature.include}
+                </p>
+
                 <div className="h-px flex-auto bg-border" />
               </div>
               <ul
@@ -81,10 +82,10 @@ export const Price = () => {
               <div className="rounded-2xl bg-zinc-50 py-10 text-center ring-1 ring-inset ring-border lg:flex lg:flex-col lg:justify-center lg:py-16 dark:bg-zinc-900">
                 <div className="mx-auto max-w-xs px-8">
                   <Title order={4} className="text-zinc-600 dark:text-zinc-200">
-                    Pay once, own it forever
+                    Инвестиция в бизнес
                   </Title>
                   <p className="mt-6 flex items-baseline justify-center gap-x-2">
-                    <span className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-zinc-900 dark:text-white">
+                    <span className="text-3xl sm:text-4xl  font-bold tracking-tight text-zinc-900 dark:text-white">
                       от {feature.price}
                     </span>
                     <span className="text-xl font-semibold leading-6 tracking-wide text-zinc-600 dark:text-zinc-200">

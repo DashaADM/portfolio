@@ -14,11 +14,13 @@ const generateURL: GenerateURL<Post | Page> = ({ doc, collectionSlug }) => {
     ? `${process.env.NEXT_PUBLIC_SITE_URL}/${doc?.slug}`
     : collectionSlug === COLLECTION_SLUG.POSTS
     ? `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${doc?.slug}`
+    : collectionSlug === COLLECTION_SLUG.PROJECTS
+    ? `${process.env.NEXT_PUBLIC_SITE_URL}/projects/${doc?.slug}`
     : process.env.NEXT_PUBLIC_SITE_URL
 }
 
 export const pluginSeo = seoPlugin({
-  collections: [COLLECTION_SLUG.PAGES, COLLECTION_SLUG.POSTS],
+  collections: [COLLECTION_SLUG.PAGES, COLLECTION_SLUG.POSTS, COLLECTION_SLUG.PROJECTS],
   generateTitle,
   generateURL,
 })

@@ -17,9 +17,11 @@ import { Projects } from './collections/Projects'
 import { Services } from './collections/Services'
 import { cachedPayloadPlugin } from './plugins/cachedPayload'
 import { Posts } from './collections/Posts'
-import { Tags } from './collections/Tags/Tags'
+import { Tags } from './collections/Tags'
 import { pluginSeo } from './plugins/pluginSeo'
 import { pluginFormBuilder } from './plugins/pluginFormBuilder'
+import { Features } from './collections/Features'
+import { Technologies } from './collections/Technologies'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -28,7 +30,7 @@ export default buildConfig({
   admin: {
     user: Users.slug,
   },
-  collections: [Pages, Posts, Projects, Services, Tags, Users, Media],
+  collections: [Features, Pages, Posts, Projects, Services, Tags, Technologies, Users, Media],
   globals: [Settings],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',

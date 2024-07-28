@@ -17,6 +17,7 @@ import config from '@payload-config'
 import { getCachedPayload } from '@/plugins/cachedPayload'
 import { GLOBAL_SLUG } from '@/constants'
 import { FormBlock } from '@/components/blocks/FormBlock'
+import { BasicHero } from '@/components/blocks/BasicHero'
 
 const ContactPage = async () => {
   // const [agreed, setAgreed] = useState(false)
@@ -32,7 +33,7 @@ const ContactPage = async () => {
 
   return (
     <PageTemplate>
-      <div className="isolate py-16 md:py-32">
+      <div className="isolate">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
@@ -46,15 +47,14 @@ const ContactPage = async () => {
           />
         </div>
 
-        <main className="container">
-          <Title order={4}>Контакты</Title>
-          <Title order={1} className="my-6 text-zinc-600 dark:text-zinc-200">
-            Давайте работать вместе {/* {<br className="md:hidden" />} */}
-          </Title>
-          <p className="max-w-screen-md text-md md:text-xl text-zinc-600 dark:text-zinc-400">
-            Какая бы ни была ваша цель — мы поможем вам её достичь.
-          </p>
-          <div className="grid md:grid-cols-2 gap-8 mt-32 ">
+        <main>
+          <BasicHero
+            prefix="Контакты"
+            suffix="Какая бы ни была ваше цель, я помогу вам к ней прийти."
+          >
+            Давайте работать вместе
+          </BasicHero>
+          <div className="container grid md:grid-cols-2 gap-8 mt-16 ">
             <div className="text-zinc-600 dark:text-zinc-400">
               <a href="tel:+79165638418" className="block">
                 <div className="flex items-start ">

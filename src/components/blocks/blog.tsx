@@ -9,9 +9,9 @@ interface BlogProps {
 
 export const Blog: React.FC<BlogProps> = ({ posts }) => {
   return (
-    <section className="py-8 lg:py-12 container">
-      <Title order={2} className="mb-6">
-        Важно знать
+    <section className="my-16 lg:my-32 container">
+      <Title order={2} className="mb-8 md:mb-12">
+        Полезно знать
       </Title>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {posts.map((post) => (

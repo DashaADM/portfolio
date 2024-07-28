@@ -16,7 +16,7 @@ export const FloatingLabel: React.FC<FloatingLabelProps> = React.forwardRef<
         data-floating={false}
         className="absolute transition-transform text-zinc-600/50 dark:text-zinc-400/50 text-s top-2 left-3 pointer-events-none data-[floating=true]:text-zinc-600 data-[floating=true]:text-xs data-[floating=true]:font-semibold data-[floating=true]:pt-1 data-[floating=true]:-translate-y-8 data-[floating=true]:-translate-x-3"
       >
-        FloatingLabel
+        Email
       </label>
       {children}
     </div>

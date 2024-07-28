@@ -1,5 +1,3 @@
-import { TemplateHeroBlock } from '@/components/blocks/templateHeroBlock'
-
 import React from 'react'
 import { PageTemplate } from '@/components/layout/page-template'
 import { getPayloadHMR } from '@payloadcms/next/utilities'
@@ -7,6 +5,7 @@ import config from '@/payload.config'
 import { getCachedPayload } from '@/plugins/cachedPayload'
 import { COLLECTION_SLUG } from '@/constants'
 import { AllProjects } from '@/components/projects/AllProjects'
+import { BasicHero } from '@/components/blocks/BasicHero'
 
 const ProjectsPage = async ({ searchParams: { page = 1 } }: { searchParams: { page: number } }) => {
   const payload = await getPayloadHMR({
@@ -23,7 +22,13 @@ const ProjectsPage = async ({ searchParams: { page = 1 } }: { searchParams: { pa
 
   return (
     <PageTemplate>
-      <TemplateHeroBlock />
+      {/* <TemplateHeroBlock /> */}
+      <BasicHero
+        prefix="Проекты"
+        suffix="Эффективное использование ресурсов и адаптация решений под&nbsp;конкретные цели каждого клиента."
+      >
+        Практические решения для&nbsp;реальных&nbsp;задач
+      </BasicHero>
       <AllProjects data={projects} />
     </PageTemplate>
   )

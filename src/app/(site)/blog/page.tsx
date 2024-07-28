@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/pagination'
 import Link from 'next/link'
 import { generatePageNumbers } from '@/utils/generatePageNumbers'
+import { BasicHero } from '@/components/blocks/BasicHero'
 
 interface AllBlogPostsProps {
   searchParams: {
@@ -41,10 +42,14 @@ const AllBlogPosts: React.FC<AllBlogPostsProps> = async ({ searchParams }) => {
 
   return (
     <PageTemplate>
-      <div className="container py-12 md:py-24">
-        <Title>Блог</Title>
-        <Separator className="my-8" />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div>
+        <BasicHero
+          prefix="Блог"
+          suffix="Полезные статьи, советы и&nbsp;новости для&nbsp;роста и&nbsp;развития вашего бизнеса."
+        >
+          Инсайты и тренды в&nbsp;мире <span className="whitespace-nowrap">веб-разработки</span>
+        </BasicHero>
+        <div className="container grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {data?.docs?.map((post) => (
             <BlogCard key={post.id} post={post} />
           ))}

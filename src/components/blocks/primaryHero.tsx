@@ -28,7 +28,7 @@ export const PrimaryHeroBlock = () => {
         </Title>
         <div className="flex gap-2 items-center mt-10">
           <Button size="lg" asChild>
-            <Link href="/projects">Связаться</Link>
+            <Link href="/contact">Связаться</Link>
           </Button>
           <Button variant="link" size="lg" asChild>
             <Link href="/projects">

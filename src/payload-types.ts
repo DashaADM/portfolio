@@ -11,11 +11,13 @@ export interface Config {
     users: UserAuthOperations;
   };
   collections: {
+    features: Feature;
     pages: Page;
     posts: Post;
     projects: Project;
     services: Service;
     tags: Tag;
+    technologies: Technology;
     users: User;
     media: Media;
     forms: Form;
@@ -49,6 +51,17 @@ export interface UserAuthOperations {
   unlock: {
     email: string;
   };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "features".
+ */
+export interface Feature {
+  id: string;
+  title?: string | null;
+  slug?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -174,6 +187,18 @@ export interface Project {
         value: string | Service;
       }[]
     | null;
+  technologies?:
+    | {
+        relationTo: 'technologies';
+        value: string | Technology;
+      }[]
+    | null;
+  features?:
+    | {
+        relationTo: 'features';
+        value: string | Feature;
+      }[]
+    | null;
   tags?:
     | {
         relationTo: 'tags';
@@ -181,7 +206,8 @@ export interface Project {
       }[]
     | null;
   coverImage?: string | Media | null;
-  description?: string | null;
+  shortDescription?: string | null;
+  longDescription?: string | null;
   content?: {
     root: {
       type: string;
@@ -197,6 +223,10 @@ export interface Project {
     };
     [k: string]: unknown;
   } | null;
+  meta?: {
+    title?: string | null;
+    description?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -207,6 +237,17 @@ export interface Project {
 export interface Service {
   id: string;
   title: string;
+  slug?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "technologies".
+ */
+export interface Technology {
+  id: string;
+  title?: string | null;
   slug?: string | null;
   updatedAt: string;
   createdAt: string;

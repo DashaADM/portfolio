@@ -24,9 +24,9 @@ export const AllProjects: React.FC<AllProjectsProps> = ({ data }) => {
   const pageNumbers = generatePageNumbers(data.totalPages, data.page)
 
   return (
-    <section className="container pt-16 sm:pt-24">
-      <Title order={2}>Недавние проекты</Title>
-      <div className="py- lg:py-14 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
+    <section className="container ">
+      {/* <Title order={2}>Недавние проекты</Title> */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
         {data.docs.map((project) => (
           <ProjectCard key={project.id} data={project} />
         ))}

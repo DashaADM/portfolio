@@ -15,19 +15,19 @@ export const DesktopNav = () => {
         <NavigationMenuItem>
           <Link href="/projects" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Projects
+              Проекты
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="/blog" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>Blog</NavigationMenuLink>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>Блог</NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href="/contact" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Contact
+              Контакты
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

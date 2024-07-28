@@ -23,10 +23,19 @@ const ProjectPage = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <PageTemplate>
-      <div className="my-28">
-        <div className="container max-w-3xl text-center mb-28">
-          <Title className="mb-8">{project?.title}</Title>
-          <div className="flex gap-4 justify-center">
+      <div className="my-32">
+        <div className="container max-w-3xl text-center mb-24">
+          {/* <Title order={4} className="mb-4">
+            {project?.shortDescription}
+          </Title> */}
+          <h1 className="mb-4">
+            <div className="text-md font-semibold mb-4">{project?.shortDescription}</div>
+            <div className="scroll-m-20 tracking-tight text-3xl sm:text-4xl lg:text-5xl font-normal">
+              {project?.title}
+            </div>
+          </h1>
+          <p className="mb-8">{project?.longDescription}</p>
+          <div className="flex gap-2 justify-center">
             {project?.services?.map(
               (tag) =>
                 typeof tag?.value === 'object' && (

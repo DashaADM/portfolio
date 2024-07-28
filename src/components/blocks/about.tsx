@@ -1,38 +1,38 @@
 import React from 'react'
 import {
-  ArrowPathIcon,
-  CloudArrowUpIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
+  ComputerDesktopIcon,
+  CodeBracketIcon,
+  DocumentMagnifyingGlassIcon,
+  PresentationChartBarIcon,
 } from '@heroicons/react/24/outline'
 import { Title } from '../ui/title'
 
 const features = [
   {
-    name: 'Веб-дизайн',
-    description: 'Дизайн сайта, интернет-магазина, приложения.',
-    icon: CloudArrowUpIcon,
+    name: 'Дизайн',
+    description:
+      'Дизайн сайта, интернет-магазина, приложения. Графический дизайн. Создание бренд-айдентики.',
+    icon: PresentationChartBarIcon,
   },
   {
-    name: 'SSL certificates',
+    name: 'Разработка сайта / интернет-магазина / маркетплейса',
     description:
-      'Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.',
-    icon: LockClosedIcon,
+      'Верстка с адаптацией под все устройства, настройка анимаций, форм заявок, системы оплаты, доставки и т.д.',
+    icon: CodeBracketIcon,
   },
   {
-    name: 'Simple queues',
-    description:
-      'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
-    icon: ArrowPathIcon,
+    name: 'Поисковая оптимизация (SEO)',
+    description: 'Продвижение вашего сайта в поисковых системах (Яндекс, Google, Mail.ru и т.п).',
+    icon: DocumentMagnifyingGlassIcon,
   },
 ]
 
 export function About() {
   return (
-    <section className="container pt-16 sm:pt-32">
+    <section className="container my-16 md:my-32">
       <Title order={2}>Услуги</Title>
 
-      <div className="max-w-[85rem] py-10 lg:py-14">
+      <div className="max-w-[85rem] pt-8 md:pt-12">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 grid-auto-rows gap-2">
           {features.map((feature, index) => (
             <div
