@@ -29,7 +29,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ data }) => {
         <h3 className="relative inline-block font-medium text-lg text-black before:absolute before:bottom-0.5 before:start-0 before:-z-[1] before:w-full before:h-1 before:bg-indigo-500 before:transition before:origin-left before:scale-x-0 group-hover:before:scale-x-100 dark:text-white">
           {data.title}
         </h3>
-        <p className="mt-1 text-zinc-600 dark:text-zinc-400">{data?.description}</p>
+        <p className="mt-1 text-zinc-600 dark:text-zinc-400">{data?.shortDescription}</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {Array.isArray(data.tags) &&
             data?.services?.map(
