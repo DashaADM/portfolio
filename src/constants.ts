@@ -14,4 +14,5 @@ export const COLLECTION_SLUG = {
 
 export const GLOBAL_SLUG = {
   SETTINGS: 'settings',
+  PRIVACY_POLICY: 'privacy-policy',
 } as const

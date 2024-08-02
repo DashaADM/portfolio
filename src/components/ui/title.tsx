@@ -7,8 +7,8 @@ const titleVariants = cva('font-semibold leading-7', {
   variants: {
     order: {
       1: 'scroll-m-20 tracking-tight text-3xl sm:text-4xl lg:text-5xl font-normal',
-      2: 'scroll-m-20 text-3xl lg:text-4-xl',
-      3: 'text-2xl lg:text-3-xl',
+      2: 'scroll-m-20 text-2xl sm:text-3xl lg:text-4-xl',
+      3: 'text-xl sm:text-2xl lg:text-3-xl',
       4: 'text-md font-semibold',
       5: 'text-md font-semibold',
       6: 'text-md font-semibold',

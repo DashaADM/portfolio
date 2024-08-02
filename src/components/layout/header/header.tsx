@@ -8,7 +8,7 @@ import Link from 'next/link'
 export const Header = () => {
   return (
     <header className="z-50 fixed top-0 left-0 w-full bg-background border-b h-[var(--header-height)] flex">
-      <nav className="mx-auto flex container items-center justify-between" aria-label="Global">
+      <nav className="mx-auto flex container items-center justify-between" aria-label="Общее">
         <div className="flex flex-1">
           <Link href="/" legacyBehavior passHref={true}>
             <Button variant="transparent" className="px-0">

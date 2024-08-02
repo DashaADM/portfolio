@@ -29,6 +29,7 @@ export interface Config {
     defaultIDType: string;
   };
   globals: {
+    'privacy-policy': PrivacyPolicy;
     settings: Setting;
   };
   locale: null;
@@ -161,6 +162,7 @@ export interface Tag {
 export interface Media {
   id: string;
   alt: string;
+  blurHash?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -465,6 +467,31 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "privacy-policy".
+ */
+export interface PrivacyPolicy {
+  id: string;
+  title?: string | null;
+  content?: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

@@ -22,6 +22,7 @@ import { pluginSeo } from './plugins/pluginSeo'
 import { pluginFormBuilder } from './plugins/pluginFormBuilder'
 import { Features } from './collections/Features'
 import { Technologies } from './collections/Technologies'
+import { PrivacyPolicy } from './globals/PrivacyPolicy'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -31,7 +32,7 @@ export default buildConfig({
     user: Users.slug,
   },
   collections: [Features, Pages, Posts, Projects, Services, Tags, Technologies, Users, Media],
-  globals: [Settings],
+  globals: [PrivacyPolicy, Settings],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {

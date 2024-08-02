@@ -10,6 +10,8 @@ import config from '@payload-config'
 import { getCachedPayload } from '@/plugins/cachedPayload'
 import { GLOBAL_SLUG } from '@/constants'
 import Script from 'next/script'
+import { YandexMetricaProvider } from 'next-yandex-metrica'
+import { ClientLayout } from './layout.client'
 
 export const metadata = {
   title: 'Разработка сайтов и интернет-магазинов | dashadesign',
@@ -33,17 +35,19 @@ export default async function RootLayout({ children }: { children: React.ReactNo
     <html lang="ru" suppressHydrationWarning>
       <head></head>
       <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
-        <ThemeProvider
-          attribute="data-mode"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Toaster />
-          <Header />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <ClientLayout>
+          <ThemeProvider
+            attribute="data-mode"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Toaster />
+            <Header />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </ClientLayout>
       </body>
       <Script
         defer

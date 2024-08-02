@@ -1,37 +1,33 @@
-import { cn } from '@/lib/utils'
 import React from 'react'
-import { serializeLexical } from './serializeLexical'
-import { SerializedEditorState } from 'lexical'
+
+import { SerializeConfig, serializeLexical } from './serialize'
 
 type Props = {
   className?: string
-  content: SerializedEditorState
-  enableGutter?: boolean
-  enableProse?: boolean
-}
+  content: Record<string, any>
+} & SerializeConfig
 
 export const RichText: React.FC<Props> = ({
   className,
   content,
   enableGutter = true,
-  enableProse = true,
+  enableMargin = true,
+  containerSize = '3xl',
 }) => {
   if (!content) {
     return null
   }
 
   return (
-    <div
-      className={cn(
-        {
-          'container max-w-3xl': enableGutter,
-          'max-w-none': !enableGutter,
-          'max-auto prose dark:prose-invert': enableProse,
-        },
-        className,
-      )}
-    >
-      {content && serializeLexical(content)}
+    <div className={className}>
+      {content &&
+        !Array.isArray(content) &&
+        typeof content === 'object' &&
+        'root' in content &&
+        serializeLexical({
+          nodes: content?.root?.children,
+          config: { enableGutter, enableMargin, containerSize },
+        })}
     </div>
   )
 }

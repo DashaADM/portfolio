@@ -108,9 +108,15 @@ dependencies:
   next-themes:
     specifier: ^0.3.0
     version: 0.3.0(react-dom@19.0.0-rc-fb9a90fa48-20240614)(react@19.0.0-rc-fb9a90fa48-20240614)
+  next-yandex-metrica:
+    specifier: ^1.1.2
+    version: 1.1.2(next@15.0.0-canary.85)(react@19.0.0-rc-fb9a90fa48-20240614)
   payload:
     specifier: 3.0.0-beta.68
     version: 3.0.0-beta.68(@swc/core@1.7.2)(@swc/types@0.1.12)(graphql@16.9.0)(typescript@5.5.4)
+  plaiceholder:
+    specifier: ^3.0.0
+    version: 3.0.0(sharp@0.32.6)
   react:
     specifier: ^19.0.0-rc-6230622a1a-20240610
     version: 19.0.0-rc-fb9a90fa48-20240614
@@ -6028,6 +6034,16 @@ packages:
     resolution: {integrity: sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==}
     dev: false
 
+  /next-yandex-metrica@1.1.2(next@15.0.0-canary.85)(react@19.0.0-rc-fb9a90fa48-20240614):
+    resolution: {integrity: sha512-gHlf3qTFY1PMyk/hqLwKKGkIs5XUa+ALQQb2xcTLR9PKxoD35O5eCzR34LRwgCtdMyHunQ1VSyn33E1l9AOWDA==}
+    peerDependencies:
+      next: '>=11.0.0'
+      react: '>=17.0.0'
+    dependencies:
+      next: 15.0.0-canary.85(react-dom@19.0.0-rc-fb9a90fa48-20240614)(react@19.0.0-rc-fb9a90fa48-20240614)
+      react: 19.0.0-rc-fb9a90fa48-20240614
+    dev: false
+
   /next@15.0.0-canary.85(react-dom@19.0.0-rc-fb9a90fa48-20240614)(react@19.0.0-rc-fb9a90fa48-20240614):
     resolution: {integrity: sha512-SVJ6cwoifRND4rl7V3ecX6d6CIlMdnrzwJ3i9waVbFxEBXDIQ1zizfQfnXJs3VHjwDbc8enFD+0mzVFy5wLbyA==}
     engines: {node: '>=18.18.0'}
@@ -6392,6 +6408,14 @@ packages:
   /pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
+
+  /plaiceholder@3.0.0(sharp@0.32.6):
+    resolution: {integrity: sha512-jwHxxHPnr1BwRzPCeZgEK2BMsEy2327sWynw3qb6XC/oGgGDUTPtR8pFxFQmNArhMBwhkUbUr5OPhhIJpCa8eQ==}
+    peerDependencies:
+      sharp: '>= 0.30.6'
+    dependencies:
+      sharp: 0.32.6
+    dev: false
 
   /pluralize@8.0.0:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
