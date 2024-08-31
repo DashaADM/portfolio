@@ -9,12 +9,12 @@ const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
     : 'Разработка сайтов и интернет-магазинов'
 }
 
-const generateURL: GenerateURL<Post | Page> = ({ doc, collectionSlug }) => {
-  return doc?.slug && collectionSlug === COLLECTION_SLUG.PAGES
+const generateURL: GenerateURL<Post | Page> = ({ doc, slug }) => {
+  return doc?.slug && slug === COLLECTION_SLUG.PAGES
     ? `${process.env.NEXT_PUBLIC_SITE_URL}/${doc?.slug}`
-    : collectionSlug === COLLECTION_SLUG.POSTS
+    : slug === COLLECTION_SLUG.POSTS
     ? `${process.env.NEXT_PUBLIC_SITE_URL}/blog/${doc?.slug}`
-    : collectionSlug === COLLECTION_SLUG.PROJECTS
+    : slug === COLLECTION_SLUG.PROJECTS
     ? `${process.env.NEXT_PUBLIC_SITE_URL}/projects/${doc?.slug}`
     : process.env.NEXT_PUBLIC_SITE_URL
 }
