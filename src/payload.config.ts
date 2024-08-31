@@ -23,6 +23,7 @@ import { pluginFormBuilder } from './plugins/pluginFormBuilder'
 import { Features } from './collections/Features'
 import { Technologies } from './collections/Technologies'
 import { PrivacyPolicy } from './globals/PrivacyPolicy'
+import { S3Storage } from './plugins/storage-s3'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -55,5 +56,6 @@ export default buildConfig({
     cachedPayloadPlugin,
     pluginSeo,
     pluginFormBuilder,
+    S3Storage
   ],
 })
