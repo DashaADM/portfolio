@@ -112,23 +112,16 @@ dependencies:
     version: 15.0.0-canary.136(react-dom@19.0.0-rc-7771d3a7-20240827)(react@19.0.0-rc-7771d3a7-20240827)
   next-themes:
     specifier: ^0.3.0
-<<<<<<< Updated upstream
-    version: 0.3.0(react-dom@19.0.0-rc-fb9a90fa48-20240614)(react@19.0.0-rc-fb9a90fa48-20240614)
+    version: 0.3.0(react-dom@19.0.0-rc-7771d3a7-20240827)(react@19.0.0-rc-7771d3a7-20240827)
   next-yandex-metrica:
     specifier: ^1.1.2
-    version: 1.1.2(next@15.0.0-canary.85)(react@19.0.0-rc-fb9a90fa48-20240614)
-  payload:
-    specifier: 3.0.0-beta.68
-    version: 3.0.0-beta.68(@swc/core@1.7.2)(@swc/types@0.1.12)(graphql@16.9.0)(typescript@5.5.4)
-  plaiceholder:
-    specifier: ^3.0.0
-    version: 3.0.0(sharp@0.32.6)
-=======
-    version: 0.3.0(react-dom@19.0.0-rc-7771d3a7-20240827)(react@19.0.0-rc-7771d3a7-20240827)
+    version: 1.1.2(next@15.0.0-canary.136)(react@19.0.0-rc-7771d3a7-20240827)
   payload:
     specifier: 3.0.0-beta.97
     version: 3.0.0-beta.97(graphql@16.9.0)(monaco-editor@0.51.0)(react-dom@19.0.0-rc-7771d3a7-20240827)(react@19.0.0-rc-7771d3a7-20240827)(typescript@5.5.4)
->>>>>>> Stashed changes
+  plaiceholder:
+    specifier: ^3.0.0
+    version: 3.0.0(sharp@0.32.6)
   react:
     specifier: npm:react@19.0.0-rc-7771d3a7-20240827
     version: 19.0.0-rc-7771d3a7-20240827
@@ -6285,6 +6278,16 @@ packages:
     dependencies:
       react: 19.0.0-rc-7771d3a7-20240827
       react-dom: 19.0.0-rc-7771d3a7-20240827(react@19.0.0-rc-7771d3a7-20240827)
+    dev: false
+
+  /next-yandex-metrica@1.1.2(next@15.0.0-canary.136)(react@19.0.0-rc-7771d3a7-20240827):
+    resolution: {integrity: sha512-gHlf3qTFY1PMyk/hqLwKKGkIs5XUa+ALQQb2xcTLR9PKxoD35O5eCzR34LRwgCtdMyHunQ1VSyn33E1l9AOWDA==}
+    peerDependencies:
+      next: '>=11.0.0'
+      react: npm:react@19.0.0-rc-7771d3a7-20240827
+    dependencies:
+      next: 15.0.0-canary.136(react-dom@19.0.0-rc-7771d3a7-20240827)(react@19.0.0-rc-7771d3a7-20240827)
+      react: 19.0.0-rc-7771d3a7-20240827
     dev: false
 
   /next@15.0.0-canary.136(react-dom@19.0.0-rc-7771d3a7-20240827)(react@19.0.0-rc-7771d3a7-20240827):

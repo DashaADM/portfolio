@@ -210,7 +210,8 @@ export interface Project {
       }[]
     | null;
   coverImage?: (string | null) | Media;
-  description?: string | null;
+  shortDescription?: string | null;
+  longDescription?: string | null;
   content?: {
     root: {
       type: string;
