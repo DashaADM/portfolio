@@ -40,6 +40,7 @@ export interface Config {
 export interface UserAuthOperations {
   forgotPassword: {
     email: string;
+    password: string;
   };
   login: {
     email: string;
@@ -51,6 +52,7 @@ export interface UserAuthOperations {
   };
   unlock: {
     email: string;
+    password: string;
   };
 }
 /**
@@ -120,7 +122,7 @@ export interface Post {
         value: string | Tag;
       }[]
     | null;
-  coverImage?: string | Media | null;
+  coverImage?: (string | null) | Media;
   content?: {
     root: {
       type: string;
@@ -207,9 +209,8 @@ export interface Project {
         value: string | Tag;
       }[]
     | null;
-  coverImage?: string | Media | null;
-  shortDescription?: string | null;
-  longDescription?: string | null;
+  coverImage?: (string | null) | Media;
+  description?: string | null;
   content?: {
     root: {
       type: string;
