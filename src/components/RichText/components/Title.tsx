@@ -31,12 +31,13 @@ export const Title = ({
         'text-start': node.format === 'start',
         'text-end': node.format === 'end',
         'text-justify': node.format === 'justify',
-        'mt-0.5em mb-1.5em ': order === 1,
-        'mt-0.5em mb-1.4em': order === 2,
-        'mt-0.5em mb-1.3em': order === 3,
-        'mt-0.5em mb-1.2em': order === 4,
-        'mt-0.5em mb-1.1em': order === 5,
-        'mt-0.5em mb-1em': order === 6,
+        'mt-[0.5em] mb-[1.5em] ': order === 1,
+        'mt-[0.5em] mb-[1.2em]': order === 2,
+        'mt-[0.5em] mb-[0.8em]': order === 3 || order === 4,
+        'mt-[0.5em] mb-[0.5em]': order === 5 || order === 6,
+        // 'mt-[0.5em] mb-[1.2em]': order === 4,
+        //'mt-[0.5em] mb-[1.1em]': order === 5,
+        //'mt-[0.5em] mb-[1em]': order === 6,
       })}
     >
       {children}

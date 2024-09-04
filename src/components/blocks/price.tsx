@@ -93,7 +93,7 @@ export const Price = () => {
                     </span>
                   </p>
                   <Button size="lg" variant="primary" className="mt-10 w-full" asChild>
-                    <Link href="/">Обсудить проект</Link>
+                    <Link href="/contact">Обсудить проект</Link>
                   </Button>
                   <p className="mt-6 text-xs leading-5 text-zinc-600 dark:text-zinc-400">
                     Цена и сроки реализации зависят от сложности проекта и скорости обратной связи
