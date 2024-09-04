@@ -28,10 +28,10 @@ const Page = async () => {
   return (
     <PageTemplate withHeaderPadding={false}>
       <PrimaryHeroBlock />
-      <About />
+      <About id="about" />
       <ProjectsPreview data={projects.docs} />
       <Price />
-      <FAQ />
+      <FAQ id="faq" />
       <Blog posts={posts} />
     </PageTemplate>
   )

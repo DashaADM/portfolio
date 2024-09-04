@@ -131,7 +131,7 @@ export function serializeLexical({
               return (
                 <Container config={config} key={index}>
                   <p
-                    className={cn('leading-7 [&:not(:first-child)]:mt-6', {
+                    className={cn('leading-7 mb-6', {
                       'text-left': node.format === 'left',
                       'text-right': node.format === 'right',
                       'text-center': node.format === 'center',

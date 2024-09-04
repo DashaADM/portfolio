@@ -28,7 +28,7 @@ const data = [
     links: [
       {
         label: `Услуги`,
-        url: '/services',
+        url: '/#about',
       },
       {
         label: `Проекты`,
@@ -40,7 +40,7 @@ const data = [
       },
       {
         label: `Частые вопросы`,
-        url: '/faq',
+        url: '/#faq',
       },
       {
         label: `Контакты`,
@@ -53,16 +53,16 @@ const data = [
     name: `Полезное`,
     links: [
       {
-        label: `Услуги`,
-        url: '/services',
+        label: `Кастомный vs Платформа`,
+        url: '/blog/kastomnyi-sait-ili-gotovaia-platforma-kak-ne-progadat-s-vyborom',
       },
       {
-        label: `Проекты`,
-        url: '/projects',
+        label: `Этапы разработки`,
+        url: '/blog/etapy-razrabotki-saita-chto-proiskhodit-ot-idei-do-zapuska',
       },
       {
-        label: `Блог`,
-        url: '/blog',
+        label: `Выбор домена и хостинга`,
+        url: '/blog/vybor-domennogo-imeni-i-khostinga-kliuchevye-faktory-dlia-uspeshnogo-starta-onlain-biznesa',
       },
     ],
   },

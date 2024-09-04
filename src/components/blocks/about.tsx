@@ -1,11 +1,14 @@
 import React from 'react'
 import {
-  ComputerDesktopIcon,
   CodeBracketIcon,
   DocumentMagnifyingGlassIcon,
   PresentationChartBarIcon,
 } from '@heroicons/react/24/outline'
 import { Title } from '../ui/title'
+
+interface AboutProps {
+  id?: string
+}
 
 const features = [
   {
@@ -27,9 +30,9 @@ const features = [
   },
 ]
 
-export function About() {
+export function About({ id }: AboutProps) {
   return (
-    <section className="container my-16 md:my-32">
+    <section id={id} className="container my-16 md:my-32">
       <Title order={2}>Услуги</Title>
 
       <div className="max-w-[85rem] pt-8 md:pt-12">
