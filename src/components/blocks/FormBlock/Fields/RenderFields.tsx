@@ -10,9 +10,9 @@ export const RenderFields = ({ fields }: { fields: Form['fields'] }) => {
 
       if (Field) {
         return (
-          <div key={index} className="mb-6 last:mb-0">
-            <Field {...field} />
-          </div>
+          // <div key={index} className="mb-6 last:mb-0">
+          <Field {...field} />
+          // </div>
         )
       }
 

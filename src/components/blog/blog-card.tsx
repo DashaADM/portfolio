@@ -33,7 +33,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
   return (
     <Link
       ref={cardRef}
-      className="group flex flex-col h-full hover:bg-zinc-100/60 rounded-xl p-5 transition-all dark:hover:bg-white/10"
+      className="group flex flex-col h-full gap-3 hover:bg-zinc-100/60 rounded-xl p-5 transition-all dark:hover:bg-white/10"
       href={`/blog/${post?.slug}`}
     >
       <div className="relative">
@@ -55,7 +55,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
           <TooltipTrigger asChild>
             <Title
               order={4}
-              className="pt-3 text-lg line-clamp-2 overflow-hidden transition-colors group-hover:text-indigo-900"
+              className="text-lg line-clamp-2 overflow-hidden transition-colors group-hover:text-indigo-900 dark:group-hover:text-indigo-200"
             >
               <span>{post?.title}</span>
             </Title>
@@ -65,7 +65,7 @@ export const BlogCard: React.FC<BlogCardProps> = ({ post }) => {
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>
-      <div className="mt-auto pt-3 flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 justify-start">
         {post?.tags?.map(
           (tag) =>
             typeof tag?.value === 'object' && (

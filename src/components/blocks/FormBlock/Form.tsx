@@ -25,8 +25,6 @@ export const Form = ({ form, children }: { form: FormType; children: React.React
 
       const result = await submitForm(form.id, dataToSend)
 
-      console.log(result)
-
       if (result.success) {
         reset()
         if (form.confirmationType === 'message') {
@@ -42,11 +40,13 @@ export const Form = ({ form, children }: { form: FormType; children: React.React
     })
   }
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-12 gap-4">
       {children}
-      <Button type="submit" loading={isSubmitting}>
-        {form.submitButtonLabel}
-      </Button>
+      <div className="col-span-12">
+        <Button type="submit" loading={isSubmitting}>
+          {form.submitButtonLabel}
+        </Button>
+      </div>
     </form>
   )
 }

@@ -61,8 +61,8 @@ const data = [
         url: '/blog/etapy-razrabotki-saita-chto-proiskhodit-ot-idei-do-zapuska',
       },
       {
-        label: `Выбор домена и хостинга`,
-        url: '/blog/vybor-domennogo-imeni-i-khostinga-kliuchevye-faktory-dlia-uspeshnogo-starta-onlain-biznesa',
+        label: `Как выбрать домен?`,
+        url: 'blog/vybor-idealnogo-domena-ot-osnov-do-registratsii-i-pochemu-kirillitsa-mozhet-podvesti',
       },
     ],
   },
@@ -79,37 +79,42 @@ export const Footer = () => {
             </Button>
           </Link>
           <div className="pt-5">
-            <Link href="/" legacyBehavior passHref={true}>
+            <Link href="https://www.instagram.com/dashadesign.ru/" legacyBehavior passHref={true}>
               <InstagramLogoIcon className="w-7 h-7 text-zinc-400 hover:text-indigo-500 hover:cursor-pointer"></InstagramLogoIcon>
             </Link>
           </div>
         </div>
 
-        <div className="w-full md:w-3/4 md:flex md:flex-col md:justify-start lg:w-full h-auto col-span-2 lg:order-1 rounded-2xl bg-zinc-100/60 py-10 px-10 lg:flex-col lg:justify-center dark:bg-zinc-900">
-          <Title order={4}>Оставайтесь на связи</Title>
-          <form>
-            <div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:gap-3 rounded-lg pt-3">
-              <div className="w-full">
-                <FloatingLabel>
-                  <Input />
-                </FloatingLabel>
-              </div>
+        <div className="w-full md:w-3/4 lg:w-full h-auto col-span-2 lg:order-1 rounded-2xl bg-zinc-100/60 py-10 px-10 flex flex-col items-start dark:bg-zinc-900">
+          <Title order={4} className="self-start">
+            Оставайтесь на связи
+          </Title>
+          <form className="w-full max-w-xl">
+            <div className="mt-4 flex flex-row items-center gap-0">
+              <FloatingLabel label="Email" type="email" className="flex-grow" />
               <Button
                 size="lg"
                 variant="primary"
-                className="w-full sm:w-auto whitespace-nowrap"
+                className="whitespace-nowrap h-[52px] px-4 flex items-center justify-center border  ml-2"
                 asChild
               >
                 <Link href="/">Подписаться</Link>
               </Button>
             </div>
-            <p className="mt-3 text-sm text-zinc-400">
-              Нажимая на кнопку &quot;Подписаться&quot;, вы соглашаетесь с условиями{' '}
-              <Link href="/" className="hover:text-zinc-400/90">
-                Политики конфиденциальности
-              </Link>
-              .
-            </p>
+            <div className="mt-3 flex items-start">
+              <input
+                type="checkbox"
+                id="privacy-policy"
+                className="mt-1 mr-2 h-4 w-4 text-indigo-600 border-zinc-300 rounded"
+              />
+              <label htmlFor="privacy-policy" className="text-sm text-zinc-400">
+                Нажимая на кнопку &quot;Подписаться&quot;, я соглашаюсь с условиями{' '}
+                <Link href="/privacy-policy" className="text-zinc-400 hover:text-zinc-500">
+                  Политики конфиденциальности
+                </Link>
+                .
+              </label>
+            </div>
           </form>
         </div>
         <Accordion type="single" collapsible className="sm:hidden">

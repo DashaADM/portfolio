@@ -92,7 +92,7 @@ const ContactPage = async () => {
             {features.map((feature, index) => (
               <div key={index} className="">
                 <div className="flex">
-                  <div className="relative flex-shrink-0 w-10 h-10 rounded-xl border-2 border-indigo-100 flex items-center justify-center">
+                  <div className="relative flex-shrink-0 w-10 h-10 rounded-xl border-2 border-indigo-100 dark:border-indigo-900 flex items-center justify-center">
                     <feature.icon className="w-6 h-6 stroke-1.5 text-indigo-600 dark:text-indigo-400" />
                   </div>
 
@@ -101,7 +101,7 @@ const ContactPage = async () => {
                       {feature.name}
                     </h3>
                     {feature?.description ? (
-                      <p className="text-zinc-600 dark:text-zinc-400">{feature.description}</p>
+                      <p className="text-zinc-900 dark:text-zinc-100">{feature.description}</p>
                     ) : null}
                     {typeof feature?.href === 'string' ? (
                       <a href={feature?.href}>{feature?.hrefLabel}</a>
@@ -122,9 +122,7 @@ const ContactPage = async () => {
               Есть идея? Заполните форму и расскажите, какой у вас проект
             </h2>
 
-            <div className="w-full flex items-center justify-center ">
-              {form ? <FormBlock form={form} /> : null}
-            </div>
+            <div className="">{form ? <FormBlock form={form} /> : null}</div>
           </div>
         </div>
         {/* <div

@@ -70,7 +70,7 @@ const BlogPost = async ({ params }: BlogPostProps) => {
       </div>
 
       {/* Rich text content */}
-      <div className="container max-w-3xl py-16">
+      <div className="container max-w-4xl py-16">
         <RichText content={post?.content} />
       </div>
       {/* <div className="my-32">

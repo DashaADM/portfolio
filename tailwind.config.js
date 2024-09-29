@@ -1,4 +1,5 @@
 const { default: flattenColorPalette } = require('tailwindcss/lib/util/flattenColorPalette')
+const plugin = require('tailwindcss/plugin')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -89,7 +90,16 @@ module.exports = {
     require('tailwindcss-animate'),
     'flowbite/plugin',
     addVariablesForColors,
-    require('@tailwindcss/forms'),
+    // require('@tailwindcss/forms'),
+    plugin(function ({ addUtilities }) {
+      const newUtilities = {
+        '.focus-styles': {
+          '@apply outline-none focus:outline-none  focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring':
+            {},
+        },
+      }
+      addUtilities(newUtilities)
+    }),
   ],
 }
 
