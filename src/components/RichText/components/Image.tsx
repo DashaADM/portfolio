@@ -8,7 +8,7 @@ export const Image = ({ node }: { node: SerializedUploadNode & { value: Media } 
     <div className="overflow-hidden rounded-sm my-12">
       <BlurImage
         src={node.value.url ?? ''}
-        alt={node.value.alt ?? ''}
+        alt={node.value.alt ?? 'Изображение'}
         width={node.value.width ?? 500}
         height={node.value.height ?? 500}
         sizes="(max-width: 480px) 100vw, 70vw"
