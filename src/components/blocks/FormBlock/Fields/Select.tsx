@@ -15,7 +15,7 @@ import { Controller, useFormContext } from 'react-hook-form'
 import { Error } from './Error'
 import { Width } from './Width'
 
-export const Select: React.FC<SelectField> = ({ name, label, options, required, width }) => {
+export const Select: React.FC<SelectField> = ({ name, label, options, required, width = 100 }) => {
   const {
     formState: { errors },
     control,

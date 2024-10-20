@@ -24,7 +24,7 @@ export const Textarea: React.FC<
     register: UseFormRegister<FieldValues>
     rows?: number
   }
-> = ({ name, defaultValue, label, required: requiredFromProps, rows = 3, width }) => {
+> = ({ name, defaultValue, label, required: requiredFromProps, rows = 3, width = 100 }) => {
   const {
     register,
     formState: { errors },

@@ -12,7 +12,7 @@ export const Checkbox: React.FC<CheckboxField> = ({
   defaultValue,
   label,
   required: requiredFromProps,
-  width,
+  width = 100,
 }) => {
   const {
     register,

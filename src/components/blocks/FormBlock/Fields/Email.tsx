@@ -13,7 +13,7 @@ export const Email: React.FC<EmailField> = ({
   defaultValue,
   label,
   required: requiredFromProps,
-  width,
+  width = 100,
 }) => {
   const {
     register,

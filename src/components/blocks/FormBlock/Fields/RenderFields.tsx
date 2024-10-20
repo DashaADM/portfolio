@@ -9,11 +9,7 @@ export const RenderFields: React.FC<{ fields: Form['fields'] }> = ({ fields }) =
         const Field: React.FC<any> = fieldComponents[field.blockType]
 
         if (Field) {
-          return (
-            <div key={`${field.blockType}-${index}`} className="mb-6 last:mb-0">
-              <Field {...field} />
-            </div>
-          )
+          return <Field key={`${field.blockType}-${index}`} {...field} />
         }
 
         return null

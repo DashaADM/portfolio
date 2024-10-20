@@ -13,7 +13,7 @@ export const Number: React.FC<TextField> = ({
   defaultValue,
   label,
   required: requiredFromProps,
-  width,
+  width = 100,
 }) => {
   const {
     register,
