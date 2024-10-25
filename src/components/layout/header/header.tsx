@@ -4,6 +4,7 @@ import { ThemeSwitcher } from './theme-switcher'
 import { Logo } from '@/components/logo'
 import { DesktopNav } from './desktop-nav'
 import Link from 'next/link'
+import MobileNav from './mobile-nav'
 
 export const Header = () => {
   return (
@@ -19,6 +20,9 @@ export const Header = () => {
 
         <div className="hidden lg:flex lg:w-3/4 justify-center">
           <DesktopNav />
+        </div>
+        <div className="lg:hidden">
+          <MobileNav />
         </div>
         <div className="flex lg:flex-1 lg:justify-end">
           <ThemeSwitcher />

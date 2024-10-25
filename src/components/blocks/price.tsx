@@ -4,6 +4,10 @@ import { CheckIcon } from '@radix-ui/react-icons'
 import { Button } from '../ui/button'
 import Link from 'next/link'
 
+interface PriceProps {
+  id?: string
+}
+
 const includedFeatures = [
   {
     name: `Многостраничные сайты и лендинги`,
@@ -37,9 +41,9 @@ const includedFeatures = [
   },
 ]
 
-export const Price = () => {
+export const Price: React.FC<PriceProps> = ({ id }) => {
   return (
-    <section className="container my-16 sm:my-32">
+    <section id={id} className="container my-16 sm:my-32">
       <Title order={2}>Стоимость</Title>
       <div className="flex flex-col my-8 md:my-16 gap-8 lg:gap-12">
         {includedFeatures.map((feature, index) => (

@@ -35,6 +35,10 @@ const data = [
         url: '/projects',
       },
       {
+        label: `Стоимость`,
+        url: '/#price',
+      },
+      {
         label: `Блог`,
         url: '/blog',
       },

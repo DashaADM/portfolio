@@ -30,7 +30,7 @@ const Page = async () => {
       <PrimaryHeroBlock />
       <About id="about" />
       <ProjectsPreview data={projects.docs} />
-      <Price />
+      <Price id="price" />
       <FAQ id="faq" />
       <Blog posts={posts} />
     </PageTemplate>
