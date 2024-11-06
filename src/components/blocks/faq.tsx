@@ -70,7 +70,7 @@ export const FAQ: React.FC<FAQProps> = ({ id }) => {
         <div className="md:col-span-2 mb-4 md:pr-20 relative">
           <div className="absolute w-96 h-96 rounded-full -z-10 bottom-0 blur-[200px] bg-gradient-to-tr from-indigo-400 to-violet-400 -translate-x-2/4 translate-y-2/4" />
           <Title order={2} className="mb-8 md:mb-10">
-            Частозадаваемые вопросы
+            Часто задаваемые вопросы
           </Title>
           <p className="text-zinc-600 dark:text-zinc-400">
             Добро пожаловать в уголок вопросов и ответов! Если у вас есть вопрос, возможно, он уже
