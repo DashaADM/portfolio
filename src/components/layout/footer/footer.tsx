@@ -18,7 +18,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
-import { InstagramLogoIcon } from '@radix-ui/react-icons'
+
 import { Form } from '@/payload-types'
 
 const data = [
@@ -84,7 +84,22 @@ export const Footer = () => {
           </Link>
           <div className="pt-5">
             <Link href="https://www.instagram.com/dashadesign.ru/" legacyBehavior passHref={true}>
-              <InstagramLogoIcon className="w-7 h-7 text-zinc-400 hover:text-indigo-500 hover:cursor-pointer"></InstagramLogoIcon>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-sm text-zinc-400 hover:text-indigo-500 hover:cursor-pointer mb-2"
+              >
+                Соцсеть, что нельзя называть
+              </a>
+            </Link>
+            <Link href="https://t.me/DaryaAbrams" legacyBehavior passHref={true}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-sm text-zinc-400 hover:text-indigo-500 hover:cursor-pointer"
+              >
+                Телеграм
+              </a>
             </Link>
           </div>
         </div>
