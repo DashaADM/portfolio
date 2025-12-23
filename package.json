@@ -21,14 +21,14 @@
     "@lexical/react": "0.17.0",
     "@lexical/rich-text": "0.17.0",
     "@payload-enchants/cached-local-api": "1.2.0-pre.0",
-    "@payloadcms/db-mongodb": "3.0.0-beta.97",
-    "@payloadcms/live-preview-react": "3.0.0-beta.97",
-    "@payloadcms/next": "3.0.0-beta.97",
-    "@payloadcms/plugin-form-builder": "3.0.0-beta.97",
-    "@payloadcms/plugin-nested-docs": "3.0.0-beta.97",
-    "@payloadcms/plugin-seo": "3.0.0-beta.97",
-    "@payloadcms/richtext-lexical": "3.0.0-beta.97",
-    "@payloadcms/storage-s3": "3.0.0-beta.97",
+    "@payloadcms/db-mongodb": "3.69.0",
+    "@payloadcms/live-preview-react": "3.69.0",
+    "@payloadcms/next": "3.69.0",
+    "@payloadcms/plugin-form-builder": "3.69.0",
+    "@payloadcms/plugin-nested-docs": "3.69.0",
+    "@payloadcms/plugin-seo": "3.69.0",
+    "@payloadcms/richtext-lexical": "3.69.0",
+    "@payloadcms/storage-s3": "3.69.0",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-aspect-ratio": "^1.1.0",
     "@radix-ui/react-checkbox": "^1.1.1",
@@ -49,13 +49,13 @@
     "graphql": "^16.8.1",
     "lexical": "0.17.0",
     "lucide-react": "^0.453.0",
-    "next": "15.0.0-canary.136",
+    "next": "15.4.10",
     "next-themes": "^0.3.0",
     "next-yandex-metrica": "^1.1.2",
-    "payload": "3.0.0-beta.97",
+    "payload": "3.69.0",
     "plaiceholder": "^3.0.0",
-    "react": "^19.0.0-rc-7771d3a7-20240827",
-    "react-dom": "^19.0.0-rc-7771d3a7-20240827",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-hook-form": "^7.52.0",
     "sharp": "0.32.6",
     "sonner": "^1.5.0",
@@ -68,8 +68,8 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.7",
     "@types/node": "^20.12.12",
-    "@types/react": "npm:types-react@19.0.0-beta.2",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-beta.2",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
     "autoprefixer": "^10.4.19",
     "dotenv": "^16.4.5",
     "eslint": "^8",
@@ -80,18 +80,14 @@
     "typescript": "^5.3.3"
   },
   "engines": {
-    "node": "^18.20.2 || >=20.9.0"
+    "node": "^18.20.2 || >=20.9.0",
+    "pnpm": "^9 || ^10"
   },
   "pnpm": {
-    "overrides": {
-      "@types/react": "npm:types-react@19.0.0-beta.2",
-      "@types/react-dom": "npm:types-react-dom@19.0.0-beta.2",
-      "react": "npm:react@19.0.0-rc-7771d3a7-20240827",
-      "react-dom": "npm:react-dom@19.0.0-rc-7771d3a7-20240827"
-    }
-  },
-  "overrides": {
-    "@types/react": "npm:types-react@19.0.0-beta.2",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-beta.2"
+  "onlyBuiltDependencies": [
+			"sharp",
+			"esbuild",
+			"unrs-resolver"
+		]
   }
 }
