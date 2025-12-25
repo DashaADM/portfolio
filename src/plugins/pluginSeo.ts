@@ -9,7 +9,8 @@ const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
     : 'Разработка сайтов и интернет-магазинов'
 }
 
-const generateURL: GenerateURL<Post | Page> = ({ doc, slug }) => {
+const generateURL: GenerateURL<Post | Page> = ({ doc, collectionConfig }) => {
+  const slug = collectionConfig?.slug
   return doc?.slug && slug === COLLECTION_SLUG.PAGES
     ? `${process.env.NEXT_PUBLIC_SITE_URL}/${doc?.slug}`
     : slug === COLLECTION_SLUG.POSTS
