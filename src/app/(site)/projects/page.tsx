@@ -1,14 +1,15 @@
 import React from 'react'
 import { PageTemplate } from '@/components/layout/page-template'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
 import config from '@/payload.config'
 import { getCachedPayload } from '@/plugins/cachedPayload'
 import { COLLECTION_SLUG } from '@/constants'
 import { AllProjects } from '@/components/projects/AllProjects'
 import { BasicHero } from '@/components/blocks/BasicHero'
+import { getPayload } from 'payload'
 
-const ProjectsPage = async ({ searchParams: { page = 1 } }: { searchParams: { page: number } }) => {
-  const payload = await getPayloadHMR({
+const ProjectsPage = async ({ searchParams }: { searchParams: Promise<{ page: number }> }) => {
+  const { page = 1 } = await searchParams
+  const payload = await getPayload({
     config,
   })
 

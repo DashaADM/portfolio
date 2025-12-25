@@ -6,6 +6,7 @@ export const ClientLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <YandexMetricaProvider
       tagID={Number(process.env.YANDEX_METRIKA_TAG_ID)}
+      router="app"
       initParameters={{
         accurateTrackBounce: true,
         childIframe: false,

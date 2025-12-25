@@ -1,26 +1,16 @@
-import { useState } from 'react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { Field, Label, Switch } from '@headlessui/react'
 import { PageTemplate } from '@/components/layout/page-template'
 import React from 'react'
-import { Title } from '@/components/ui/title'
 import {
   ClockIcon,
-  CodeBracketIcon,
   DevicePhoneMobileIcon,
-  DocumentMagnifyingGlassIcon,
-  EnvelopeIcon,
-  EnvelopeOpenIcon,
   PencilSquareIcon,
-  PresentationChartBarIcon,
 } from '@heroicons/react/24/outline'
-import { InstagramLogoIcon } from '@radix-ui/react-icons'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
 import config from '@payload-config'
 import { getCachedPayload } from '@/plugins/cachedPayload'
 import { GLOBAL_SLUG } from '@/constants'
 import { FormBlock } from '@/components/blocks/FormBlock'
 import { BasicHero } from '@/components/blocks/BasicHero'
+import { getPayload } from 'payload'
 
 const features = [
   {
@@ -68,7 +58,7 @@ const features = [
 
 const ContactPage = async () => {
   // const [agreed, setAgreed] = useState(false)
-  const payload = await getPayloadHMR({ config })
+  const payload = await getPayload({ config })
   const cachedPayload = getCachedPayload(payload)
 
   const settings = await cachedPayload.findGlobal({ slug: GLOBAL_SLUG.SETTINGS })

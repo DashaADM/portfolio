@@ -6,14 +6,14 @@ import { PrimaryHeroBlock } from '@/components/blocks/primaryHero'
 import config from '@/payload.config'
 
 import { PageTemplate } from '@/components/layout/page-template'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
 import React from 'react'
 import { COLLECTION_SLUG } from '@/constants'
 import { getCachedPayload } from '@/plugins/cachedPayload'
 import { ProjectsPreview } from '@/components/projects/ProjectsPreview'
+import { getPayload } from 'payload'
 
 const Page = async () => {
-  const payload = await getPayloadHMR({
+  const payload = await getPayload({
     config,
   })
 

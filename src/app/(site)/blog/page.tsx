@@ -1,7 +1,6 @@
 import { PageTemplate } from '@/components/layout/page-template'
 import { Separator } from '@/components/ui/separator'
 import { Title } from '@/components/ui/title'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
 import React from 'react'
 import config from '@/payload.config'
 import { getCachedPayload } from '@/plugins/cachedPayload'
@@ -19,16 +18,18 @@ import {
 import Link from 'next/link'
 import { generatePageNumbers } from '@/utils/generatePageNumbers'
 import { BasicHero } from '@/components/blocks/BasicHero'
+import { getPayload } from 'payload'
+import { Post } from '@/payload-types'
 
 interface AllBlogPostsProps {
-  searchParams: {
+  searchParams: Promise<{
     page: number
-  }
+  }>
 }
 
 const AllBlogPosts: React.FC<AllBlogPostsProps> = async ({ searchParams }) => {
-  const { page } = searchParams
-  const payload = await getPayloadHMR({ config })
+  const { page } = await searchParams
+  const payload = await getPayload({ config })
   const cachedPayload = getCachedPayload(payload)
 
   const data = await cachedPayload.find({

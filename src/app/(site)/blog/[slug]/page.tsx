@@ -11,13 +11,13 @@ import { RichText } from '@/components/RichText'
 import Image from 'next/image'
 
 interface BlogPostProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 const BlogPost = async ({ params }: BlogPostProps) => {
-  const { slug } = params
+  const { slug } = await params
 
   const payload = await getPayloadHMR({ config })
   const cachedPayload = getCachedPayload(payload)

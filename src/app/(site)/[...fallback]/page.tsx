@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation'
 import React from 'react'
 
-const FallbackPage = ({ params }: { params: { fallback: string[] } }) => {
-  if (params.fallback) {
+const FallbackPage = async ({ params }: { params: Promise<{ fallback: string[] }> }) => {
+  const { fallback } = await params
+  if (fallback) {
     notFound()
   }
   return <></>

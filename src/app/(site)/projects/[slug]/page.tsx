@@ -1,18 +1,23 @@
 import { PageTemplate } from '@/components/layout/page-template'
 import { RichText } from '@/components/RichText'
-import { Title } from '@/components/ui/title'
 import { getCachedPayload } from '@/plugins/cachedPayload'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
 import React from 'react'
 import config from '@/payload.config'
 import { COLLECTION_SLUG } from '@/constants'
 import { notFound } from 'next/navigation'
 import { Badge } from '@/components/ui/badge'
+import { getPayload } from 'payload'
 
-const ProjectPage = async ({ params }: { params: { slug: string } }) => {
-  const { slug } = params
+interface ProjectPageProps {
+  params: Promise<{
+    slug: string
+  }>
+}
 
-  const payload = await getPayloadHMR({ config })
+const ProjectPage = async ({ params }: ProjectPageProps) => {
+  const { slug } = await params
+
+  const payload = await getPayload({ config })
   const cachedPayload = getCachedPayload(payload)
 
   const project = await cachedPayload.findOne({ collection: COLLECTION_SLUG.PROJECTS, value: slug })

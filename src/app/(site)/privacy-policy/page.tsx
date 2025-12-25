@@ -1,15 +1,13 @@
-import { BasicHero } from '@/components/blocks/BasicHero'
 import { PageTemplate } from '@/components/layout/page-template'
 import { Title } from '@/components/ui/title'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
 import React from 'react'
 import config from '@payload-config'
 import { getCachedPayload } from '@/plugins/cachedPayload'
-import { GLOBAL_SLUG } from '@/constants'
 import { RichText } from '@/components/RichText'
+import { getPayload } from 'payload'
 
 const PrivacyPolicy = async () => {
-  const payload = await getPayloadHMR({ config })
+  const payload = await getPayload({ config })
   const cachedPayload = getCachedPayload(payload)
 
   const data = await cachedPayload.findGlobal({ slug: 'privacy-policy' })
